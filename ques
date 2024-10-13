@@ -1,0 +1,66 @@
+Create a system to manage a movie database using classes MovieDatabase, Director, and Movie.
+
+Class MovieDatabase:
+
+Attributes:
+
+directors: HashMap<Integer, Director> (Mapping director ID to Director objects)
+movies: List<Movie> (List of Movie objects)
+
+Class Movie:
+Attributes:
+
+movieId: int - Unique identifier for the movie.
+title: String - Title of the movie.
+releaseYear: int - The year the movie was released.
+directorId: int - The ID of the director who directed the movie.
+Class Director:
+Attributes:
+
+directorId: int - Unique identifier for the director.
+name: String - Name of the director.
+nationality: String - Nationality of the director.
+movies: List<Movie> - List of Movie objects directed by this director.
+
+Methods:
+
+getMoviesByDirector(int directorId): Retrieves a list of all movie titles directed by a specific director. If the director is not found, throw a DirectorNotFoundException.
+getDirectorsByNationality(String nationality): Returns a Set<Director> containing all directors of a specific nationality. If no directors are found, throw a NoDirectorsFoundException.
+convertDirectorMapToList(): Converts the HashMap<Integer, Director> to a List<Director> and returns it.
+
+
+2
+1
+steven
+american
+1
+1
+jaws
+1975
+1
+2
+chris
+british
+2
+2
+inception
+2010
+2
+3
+interstellar
+2014
+2
+2
+british 
+
+
+o/p
+1. getMoviesByDirector(2)
+Output: ["Inception", "Interstellar"]
+
+2. getDirectorsByNationality("British")
+Output: [Director{id=2, name='Christopher Nolan'}]
+
+3. convertDirectorMapToList()
+Output: [Director{id=1, name='Steven Spielberg'}, 
+         Director{id=2, name='Christopher Nolan'}]
