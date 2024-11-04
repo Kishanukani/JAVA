@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - AMS Application</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-items: center;
+            margin-top: 30px;
+        }
+
+        button {
+            width: 100%;
+            max-width: 250px;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 600px) {
+            .button-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <h1>Admin Dashboard</h1>
+
+        <div class="button-container">
+            <button onclick="navigateTo('addCarrier')">Add Carrier</button>
+            <button onclick="navigateTo('editCarrier')">Edit Carrier</button>
+            <button onclick="navigateTo('deleteCarrier')">Delete Carrier</button>
+            <button onclick="navigateTo('addFlight')">Add Flight</button>
+            <button onclick="navigateTo('editFlight')">Edit Flight</button>
+            <button onclick="navigateTo('viewBookings')">View Bookings</button>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(action) {
+            switch (action) {
+                case 'addCarrier':
+                    window.location.href = 'addCarrier.jsp';
+                    break;
+                case 'editCarrier':
+                    window.location.href = 'editCarrier.jsp';
+                    break;
+                case 'deleteCarrier':
+                    window.location.href = 'deleteCarrier.jsp';
+                    break;
+                case 'addFlight':
+                    window.location.href = 'addFlight.jsp';
+                    break;
+                case 'editFlight':
+                    window.location.href = 'editFlight.jsp';
+                    break;
+                case 'viewBookings':
+                    window.location.href = 'viewBookings.jsp';
+                    break;
+                default:
+                    alert('Action not recognized.');
+            }
+        }
+    </script>
+</body>
+
+</html>

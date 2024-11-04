@@ -55,10 +55,14 @@ public class Movie {
         getMoviesByDirector(directors, a);
         getDirectorsByNationality(directors, str);
 
-        // converttoDirectorMaptoList()
-        // for(Map<K,V>.entry(null, null))
         for (Map.Entry<Integer, Director> e : map.entrySet()) {
-            System.out.println(e.getKey() + "+" + map.get(e.getKey()).getMovies().toString());
+            // Director d = e.getValue();
+            // List<Movi> m = d.getMovies();
+            // System.out.println(m.toString());
+            System.out.println(e.getKey() + "+");
+            for (Movi m : e.getValue().getMovies()) {
+                // System.out.println(m/);
+            }
         }
 
         sc.close();
